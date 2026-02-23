@@ -1,7 +1,3 @@
-Here’s a clean, professional `README.md` you can use for your project:
-
----
-
 # 🎧 PyMumble Soundboard Bot
 
 A simple **Mumble soundboard bot** built with Python 3.11.7 using `pymumble_py3`.
