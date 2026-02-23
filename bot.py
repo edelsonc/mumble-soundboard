@@ -8,6 +8,7 @@ import sys
 SERVER = "127.0.0.1"
 PORT = 64738
 USERNAME = "SoundBot"
+PASSWORD = "yourpassword"
 
 SOUNDS = {
     "!boom": "sounds/boom.wav"
@@ -54,7 +55,7 @@ def play_sound(file_path):
 
 # Connect to Mumble
 logger.info("Connecting to Mumble server...")
-mumble = pymumble.Mumble(SERVER, USERNAME, password="charliemumbles", port=PORT)
+mumble = pymumble.Mumble(SERVER, USERNAME, password=PASSWORD, port=PORT)
 mumble.start()
 mumble.is_ready()
 logger.info("Connected and ready.")
