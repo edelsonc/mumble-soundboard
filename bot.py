@@ -3,6 +3,7 @@ import time
 import os
 import re
 import logging
+import sys
 
 SERVER = "127.0.0.1"
 PORT = 64738
@@ -26,19 +27,21 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
+
 def strip_html(text):
     message = text.message.strip()
     message = re.sub('<[^<]+?>', '', message)
     return message
 
+
 def message_received(text):
     message = strip_html(text)
-
     logger.info(f"Message received: {message}")
 
     if message in SOUNDS:
         logger.info(f"Playing sound for command: {message}")
         play_sound(SOUNDS[message])
+
 
 def play_sound(file_path):
     try:
@@ -47,6 +50,7 @@ def play_sound(file_path):
         logger.info(f"Sound played: {file_path}")
     except Exception as e:
         logger.error(f"Failed to play sound {file_path}: {e}")
+
 
 # Connect to Mumble
 logger.info("Connecting to Mumble server...")
@@ -63,5 +67,19 @@ mumble.callbacks.set_callback(
 
 logger.info("Soundboard bot running...")
 
-while True:
-    time.sleep(1)
+try:
+    while True:
+        time.sleep(1)
+
+except KeyboardInterrupt:
+    logger.info("Ctrl+C detected. Shutting down...")
+
+    try:
+        mumble.stop()
+        logger.info("Disconnected from Mumble server.")
+    except Exception as e:
+        logger.error(f"Error during disconnect: {e}")
+
+    logger.info("Shutdown complete.")
+    sys.exit(0)
+
