@@ -202,9 +202,3 @@ PASSWORD = os.getenv("MUMBLE_PASSWORD")
 * Confirm password
 * Ensure Mumble server is running
 
----
-
-## 📜 License
-
-MIT License (or your preferred license)
-
