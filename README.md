@@ -208,24 +208,3 @@ PASSWORD = os.getenv("MUMBLE_PASSWORD")
 
 MIT License (or your preferred license)
 
----
-
-## 🤖 Future Improvements
-
-* Slash-style commands
-* Volume control
-* Per-channel restrictions
-* Sound queue system
-* Web dashboard
-* Docker support
-
----
-
-If you'd like, I can also generate:
-
-* A version with badges
-* A Dockerized version
-* A `.env` configuration refactor
-* A more production-ready structure
-* GitHub Actions CI config
-
