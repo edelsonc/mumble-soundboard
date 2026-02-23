@@ -88,12 +88,7 @@ Edit these values in `soundbot.py`:
 SERVER = "127.0.0.1"
 PORT = 64738
 USERNAME = "SoundBot"
-```
-
-Update the password here:
-
-```python
-mumble = pymumble.Mumble(SERVER, USERNAME, password="yourpassword", port=PORT)
+PASSWORD = "yourpassword"
 ```
 
 ---
