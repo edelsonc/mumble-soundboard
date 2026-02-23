@@ -42,7 +42,7 @@ cd pymumble-soundboard
 ### 2️⃣ Create Virtual Environment
 
 ```bash
-python3.11 -m venv venv
+python3.11 -m venv .
 ```
 
 Activate it:
